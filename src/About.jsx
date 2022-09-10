@@ -7,6 +7,7 @@ function About() {
         <div>
             <Header />
             About
+            lorem ipsum
             <Footer />
         </div>
     )

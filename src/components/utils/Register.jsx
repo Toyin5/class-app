@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { useNavigate } from 'react-router-dom';
 
 function Register() {
 
@@ -8,10 +9,11 @@ function Register() {
     const [lname, setlname] = useState("Anonymous");
     const [message, setMessage] = useState("");
     const [flag, setFlag] = useState("");
+    const navigate = useNavigate();
 
 
     const registerAuth = async () => {
-        return await fetch("http://localhost:8080/api/v1/register/course", {
+        return await fetch("https://attendanceapi.vercel.app/api/register/course", {
             headers: {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json',
@@ -32,9 +34,12 @@ function Register() {
                 // }
                 console.log(data)
                 if (data.status === 200) {
-                    setMessage(data.message + ". Proceed to login");
+                    setMessage(data.message + ". You will be directed to login");
                     setFlag("is-success")
                     console.log(data)
+                    setTimeout(() => {
+                        navigate("/login")
+                    }, 2000);
                 }
                 if (data.code === 409) {
                     setMessage(data.message);

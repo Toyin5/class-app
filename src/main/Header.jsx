@@ -1,14 +1,14 @@
-import React, { useState } from "react";
-import { FaHome } from "react-icons/fa";
-import { Link, NavLink } from "react-router-dom";
+import React, { useState } from 'react'
+import { FaHome } from 'react-icons/fa'
+import { Link, NavLink } from 'react-router-dom'
 
-const Header = () => {
+function Header() {
+    const token = JSON.parse(localStorage.getItem("token"))
     const [isOpen, setOpen] = useState(false);
     function handleClick(e) {
         e.preventDefault();
         setOpen(!isOpen);
     }
-
     return (
         <nav
             className="navbar is-primary"
@@ -22,7 +22,7 @@ const Header = () => {
                             <span className="icon is-white">
                                 <Link to="/"><FaHome /></Link>
                             </span>
-                            <Link to="/"><span>AMS</span></Link>
+                            <Link to="/"><span>{token.course_code}</span></Link>
                         </span>
 
                     </div>
@@ -42,30 +42,45 @@ const Header = () => {
 
                 <div className={`navbar-menu ${isOpen && "is-active"}`}>
                     <div className="navbar-start">
-                        <NavLink className="navbar-item" activeclassname="is-active" to="/">
-                            Home
+                        <NavLink className="navbar-item" activeclassname="is-active" to="/app">
+                            DashBoard
                         </NavLink>
 
                         <NavLink
                             className="navbar-item"
                             activeclassname="is-active"
-                            to="/register"
+                            to="/app/register"
                         >
-                            Register/Log In
+                            Register
                         </NavLink>
 
                         <NavLink
                             className="navbar-item"
                             activeclassname="is-active"
-                            to="/about"
+                            to="/app/profile"
                         >
-                            About
+                            Profile
+                        </NavLink>
+                        <NavLink
+                            className="navbar-item"
+                            activeclassname="is-active"
+                            to="/app/settings"
+                        >
+                            Settings
+                        </NavLink>
+                        <NavLink
+                            className="navbar-item"
+                            activeclassname="is-active"
+                            to="/app/attendance"
+                        >
+                            Attendance
                         </NavLink>
                     </div>
                 </div>
             </div>
         </nav>
-    );
-};
 
-export default Header;
+    )
+}
+
+export default Header

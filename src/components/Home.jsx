@@ -1,17 +1,24 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Footer from './layouts/Footer'
 import Header from './layouts/Header'
+import { useNavigate } from 'react-router-dom'
+import Hero from './utils/Hero'
 function Home() {
+    const token = JSON.parse(localStorage.getItem("token"))
+    const navigate = useNavigate();
     const style = {
         "width": "100%",
         "height": "500px"
     }
+    useEffect(() => {
+        if (token) navigate("/app");
+    }, [])
+
     return (
         <div>
             <Header />
             <div style={style} className='main content has-text-centered'>
-                Welcome to the Attendance Management System(Class App)
-                <p>Proceed to the register section to get started</p>
+                <Hero className="main content has-text-centered hero" />
             </div>
             <Footer />
         </div>

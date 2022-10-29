@@ -30,7 +30,7 @@ function LoginSection() {
 
     const getCourses = async () => {
         try {
-            const result = await fetch("http://localhost:8080/api/v1/get/courses", {
+            const result = await fetch("https://attendanceapi.vercel.app/api/get/courses", {
                 headers: {
                     'Accept': 'application/json',
                     'Content-Type': 'application/json',
@@ -80,7 +80,7 @@ function LoginSection() {
                                         <FaUser />
                                     </Avatar>
                                 </ListItemAvatar>
-                                <ListItemText primary={course.course_code} secondary={"Lecturer: " + course.lecturer_name} />
+                                <ListItemText primary={course._id} secondary={"Lecturer: " + course.lecturer_name} />
                                 <Divider variant="inset" component="li" />
                             </ListItem>)) : (<p>No course registered yet</p>)
                         }

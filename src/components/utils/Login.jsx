@@ -11,7 +11,7 @@ function Login() {
     const navigate = useNavigate();
 
     const loginAuth = async () => {
-        return await fetch("http://localhost:8080/api/v1/course/login", {
+        return await fetch("https://attendanceapi.vercel.app/api/course/login", {
             headers: {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json',
@@ -32,7 +32,7 @@ function Login() {
                 if (data.status === 200) {
                     //Set Token and Navigate
                     setToken(data.token)
-                    navigate("/about")
+                    navigate("/app")
                 }
                 if (data.status === 404) {
                     setError(data.message)

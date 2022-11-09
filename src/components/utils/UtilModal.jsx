@@ -1,5 +1,5 @@
 import React from 'react'
-import { Fade, Modal, Backdrop, Box } from '@mui/material'
+import { Fade, Modal, Backdrop, Box, IconButton } from '@mui/material'
 import { FaBackward } from 'react-icons/fa';
 
 function UtilModal({ ...props }) {
@@ -35,10 +35,11 @@ function UtilModal({ ...props }) {
                 <Fade in={props.open}>
                     <Box sx={styleModal}>
                         <span style={style} className="icon">
-                            <FaBackward color='white' fill='red' onClick={props.handleClose} />
+                            <IconButton onClick={props.handleClose}>
+                                <FaBackward color='white' fill='red' />
+                            </IconButton>
                         </span>
                         {props.content}
-                        {/* <QrCode url="http://192.168.137.1:8080/app/register/student" size={256} color="green" /> */}
                     </Box>
                 </Fade>
             </Modal>

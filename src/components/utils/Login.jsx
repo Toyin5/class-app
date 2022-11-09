@@ -32,6 +32,7 @@ function Login() {
                 if (data.status === 200) {
                     //Set Token and Navigate
                     setToken(data.token)
+                    localStorage.setItem(code, JSON.stringify({ "code": code, "lec": 1 }))
                     navigate("/app")
                 }
                 if (data.status === 404) {

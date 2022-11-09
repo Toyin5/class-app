@@ -1,10 +1,8 @@
 import { Button, Typography } from '@mui/material';
-import React, { useLayoutEffect, useState } from 'react'
+import React, { useState } from 'react'
 import Footer from '../components/layouts/Footer'
 import UtilModal from '../components/utils/UtilModal';
 import Header from './Header'
-
-import React from 'react'
 
 
 function Attendance() {

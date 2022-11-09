@@ -1,14 +1,14 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import Footer from '../components/layouts/Footer'
 import Header from './Header'
 import { useNavigate } from 'react-router-dom'
+import { useLayoutEffect } from 'react'
 function DashBoard() {
     const token = JSON.parse(localStorage.getItem("token"))
     const navigate = useNavigate();
-
-    useEffect(() => {
+    useLayoutEffect(() => {
         if (!token) navigate("/")
-    })
+    }, [token])
 
     return (
         <div>

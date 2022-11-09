@@ -41,8 +41,9 @@ function Register() {
                         navigate("/login")
                     }, 2000);
                 }
-                if (data.code === 409) {
-                    setMessage(data.message);
+                if (data.code ===
+                    11000) {
+                    setMessage("Course has been registered!");
                     setFlag("is-warning")
                 }
 

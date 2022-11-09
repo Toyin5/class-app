@@ -1,6 +1,7 @@
 import { Button, Typography } from '@mui/material';
 import React, { useState } from 'react'
 import Footer from '../components/layouts/Footer'
+import QrCode from '../components/utils/QrCode';
 import UtilModal from '../components/utils/UtilModal';
 import Header from './Header'
 

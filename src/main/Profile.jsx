@@ -14,6 +14,10 @@ function Profile() {
             <Header />
             Profile
             <button onClick={logout} >Logout</button>
+            {/* 
+            * Show initialize attendance
+            * Show stats for each class
+            */}
             <Footer />
         </div>
     )

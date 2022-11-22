@@ -63,7 +63,7 @@ function LoginSection() {
                 <Divider orientation="vertical" flexItem />
                 <Grid item xs>
                     <div style={style} className="content has-text-centered">
-                        <h4>Registered Courses</h4>
+                        <h4>Registered Courses - {courses.length}</h4>
                     </div>
                     <Divider />
                     <List

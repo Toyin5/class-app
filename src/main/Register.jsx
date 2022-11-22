@@ -63,7 +63,7 @@ function RegisterStudent() {
                 <Divider orientation="vertical" flexItem />
                 <Grid item xs>
                     <div style={style} className="content has-text-centered">
-                        <h4>Registered Students</h4>
+                        <h4>Registered Students - {students.length}</h4>
                     </div>
                     <Divider />
                     {(students.length > 0) ?

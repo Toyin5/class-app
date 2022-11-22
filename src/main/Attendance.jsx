@@ -35,7 +35,7 @@ function Attendance() {
                 method: 'GET'
             });
             const data = await result.json();
-            // setStudents(data.data)
+            setStudents(data.data)
             console.log(data)
             return data.data;
         } catch (err) {
